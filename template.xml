@@ -1,0 +1,41 @@
+<template
+		  format="4"
+		  revision="1"
+		  name="Dao Model Adapter"
+		  description="Creates a new MVP classes - Presenter, View and Contract between the two">
+
+	<category value="Other"/>
+
+	<parameter id="typeCls"
+			   name="Class Type"
+			   type="enum"
+			   constraints="class|unique|nonempty"
+			   default="Dao"
+			   help="type of class you like to create : Dao, Adapter, Model ">
+		<option id="Dao">Dao</option>
+		<option id="BaseDao">BaseDao</option>
+		<option id="Model">Model</option>
+		<option id="ViewModel">ViewModel</option>
+		<option id="MainDB">MainDB</option>
+		<option id="Executors">Executors</option>
+		<option id="PagedListAdapter">PagedListAdapter</option>
+	</parameter>
+
+	<parameter id="className"
+			   name="class Name"
+			   type="string"
+			   constraints="class|nonempty"
+			   default="Class"
+			   help="The name of the functionality that requires MVP views"/>
+
+	<parameter id="objectName"
+			   name="Object Name"
+			   type="string"
+			   constraints="object|unique|nonempty"
+			   default="objectOfClass"
+			   help="The name of the functionality that requires MVP views"/>
+
+	<globals file="globals.xml.ftl" />
+	<execute file="recipe.xml.ftl" />
+
+</template>
